@@ -49,7 +49,7 @@ It is guaranteed that the list represents a number that does not have leading ze
 0xbebebebebebebebe: note: pointer points here
 \<memory cannot be printed>  
 
-经过上网查询后发现是因为我们在访问的某个变量中有<font color="red"><u>**定义但未赋值的指针**</u></font>，也就是野指针(Wild Pointer)。野指针指向的位置是不可知的（随机的，不正确的，没有明确限制的），这种指针对程序有不可知的后果，如果被引用可能会出严重的问题，所以应严格注意<font color="red"><u>**不应有野指针的存在**</u></font>。  
+经过上网查询后发现是因为我们在访问的某个变量中有<font color="red"><u>**定义但未赋值的指针**</u></font>，也就是野指针(Wild Pointer)。野指针指向的位置是不可知的（随机的，不正确的，没有明确限制的），这种指针对程序有不可知的后果，如果被引用可能会出现严重的问题，所以应严格注意<font color="red"><u>**不应有野指针的存在**</u></font>。  
 
 * 解决办法：
 例如下面的代码用malloc申请了一块内存空间给p3，但没有对p3->next的指针赋初始值，就会导致在编译时出现上述报错
@@ -63,7 +63,7 @@ p3->next = NULL;
 即可解决该问题。  
 
 * 总结：
-<font color="red"><u>**指针在要使用时再使用malloc申请空间，申请后要讲其中含要的定义未赋值的指针赋值或设为NULL。**</u></font>
+<font color="red"><u>**指针在要使用时再使用malloc申请空间，申请后要将其中含有的定义未赋值的指针赋值或设为NULL。**</u></font>
 
 ### 2. 进位问题
 我定义了一个变量flag用来记录两数相加是否有进位。需要注意的是如果p1->next和p2->next都为NULL时，<font color="red"><u>**如果flag=1 仍然需要为p3再加一个节点**</u></font>，此时该节点的val一定等于1

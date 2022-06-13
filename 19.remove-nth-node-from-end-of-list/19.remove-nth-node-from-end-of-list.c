@@ -61,7 +61,6 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
         int i = removeNode(NULL, head, n);
         if(i == -1){
             return head->next;
-            free(head);
         }
         else{
            return head; 

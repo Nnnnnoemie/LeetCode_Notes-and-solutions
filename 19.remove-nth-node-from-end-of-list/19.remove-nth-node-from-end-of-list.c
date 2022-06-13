@@ -25,6 +25,7 @@ int removeNode(struct ListNode* p1, struct ListNode* p2, int n){
         if(n == 1){
             p1->next = NULL;
             free(p2);
+            return 0；
         }
         return 1;
     }
@@ -60,6 +61,7 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
         int i = removeNode(NULL, head, n);
         if(i == -1){
             return head->next;
+            free(head);
         }
         else{
            return head; 

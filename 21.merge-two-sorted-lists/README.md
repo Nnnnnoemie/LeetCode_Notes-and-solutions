@@ -123,4 +123,5 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2){
 ```
 最后发现处理头结点和其他结点是重复代码较多，故又润色了现有版本
 
-
+## 运行结果
+![alt result](./../result_screenshoot/21.merge-two-sorted-lists.png)
